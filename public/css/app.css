@@ -35,7 +35,6 @@ body {
 .menu ul {
   width: 25vw;
   margin: auto;
-  border: 1px solid red;
 }
 
 .menu ul li {
@@ -49,6 +48,7 @@ body {
   text-decoration: none;
   color: #000;
   font-size: 26px;
+  font-weight: 500;
 }
 
 .container {
@@ -67,6 +67,51 @@ body {
 
 .box-product img {
   width: 100%;
+  height: 100%;
+}
+
+.footer_container {
+  width: 80vw;
+  margin: 50px 10vw;
+  color: grey;
+}
+
+.footer_container li {
+  list-style: none;
+  padding: 2% 0;
+  font-size: 12px;
+}
+
+.footer_container .left,
+.footer_container .central,
+.footer_container .right {
+  width: 30%;
+  height: 450px;
+  float: left;
+}
+
+.footer_container .left h3,
+.footer_container .central h3,
+.footer_container .right h3 {
+  margin: 3% 0;
+}
+
+.footer_container .left li {
+  padding: 0.5% 0;
+}
+
+.footer_container .central {
+  padding-left: 3%;
+}
+
+.footer_container .mountains {
+  width: 80vw;
+  height: 150px;
+  overflow: hidden;
+}
+
+.footer_container .mountains img {
+  width: 120%;
   height: 100%;
 }
 
