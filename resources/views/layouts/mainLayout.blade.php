@@ -5,6 +5,7 @@
         <title>@yield('title')</title>
         <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}" />
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
 

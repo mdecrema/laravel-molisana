@@ -8,13 +8,13 @@
     $corta = [];
     $cortissima = [];
 
-    foreach ($data as $product) {
+    foreach ($data as $key => $product) {
         if ($product["tipo"] == "lunga") {
-            $lunga[] = $product;
+            $lunga[$key] = $product;
         } elseif ($product["tipo"] == "corta") {
-            $corta[] = $product;
+            $corta[$key] = $product;
         } elseif ($product["tipo"] == "cortissima") {
-            $cortissima[] = $product;
+            $cortissima[$key] = $product;
         }
     }
 
@@ -30,39 +30,60 @@ La Molisana - Official page
 <div class="container">
     @if (!empty($lunga))
     <h2>LE LUNGHE</h2>
-    <ul>
-      @foreach ($lunga as $type)
-      <li class="box-product">
-        <img class="" src="{{$type['src']}}" alt="" />
-        <h2 class="">{{$type["titolo"]}}</h2>
-      </li>
+   
+      @foreach ($lunga as $key => $type)
+      <div class="box-product">
+        <img class="zoom" src="{{$type['src']}}" alt="" />
+        <div class="hidden-box">
+            <div class="h-b-text">
+                <a href="prodotti/show/{{$key}}">{{$type["titolo"]}}</a>
+            </div>
+            <div class="h-b-text">
+                <a href=""><span class="material-icons">local_dining</span></a>
+            </div> 
+        </div>
+      </div>
       @endforeach
-    </ul>
+  
     @endif
 
 
-    @if (!empty($lunga))
+    @if (!empty($corta))
     <h2>LE CORTE</h2>
-    <ul>
-      @foreach ($corta as $type)
-      <li class="box-product">
+    
+      @foreach ($corta as $key => $type)
+      <div class="box-product">
         <img class="" src="{{$type['src']}}" alt="" />
-        <h2 class="">{{$type["titolo"]}}</h2>
-      </li>
+        <div class="hidden-box">
+            <div class="h-b-text">
+                <a href="prodotti/show/{{$key}}">{{$type["titolo"]}}</a>
+            </div>
+            <div class="h-b-text">
+                <a href=""><span class="material-icons">local_dining</span></a>
+            </div> 
+        </div>
+      </div>
       @endforeach
-    </ul>
+    
     @endif
 
-    @if (!empty($lunga))
+    @if (!empty($cortissima))
     <h2>LE CORTISSIME</h2>
-    <ul>
-      @foreach ($cortissima as $type)
-      <li class="box-product">
+    
+      @foreach ($cortissima as $key => $type)
+      <div class="box-product">
         <img class="" src="{{$type['src']}}" alt="" />
-        <h2 class="">{{$type["titolo"]}}</h2>
-      </li>
+        <div class="hidden-box">
+            <div class="h-b-text">
+                <a href="prodotti/show/{{$key}}">{{$type["titolo"]}}</a>
+            </div>
+            <div class="h-b-text">
+                <a href=""><span class="material-icons">local_dining</span></a>
+            </div> 
+        </div>
+      </div>
       @endforeach
-    </ul>
+   
     @endif
 </div>
 
