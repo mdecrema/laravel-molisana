@@ -147,25 +147,50 @@ $data = '[
     <meta charset="utf-8">
     <title>La Molisana</title>
     <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   </head>
   <header>
-    <div class="logo"><img id="logo-img" src="../../public/images/marchio-sito-test.png" alt="" /></div>
+    <div class="logo"><img id="logo-img" src="{{asset('images/logo.png')}}" alt="" /></div>
     <div class="menu">
       <ul>
-        <li>HOME</li>
-        <li>PRODOTTI</li>
-        <li>NEWS</li>
+        <li><a href="{{asset('')}}">Home</a></li>
+        <li><a href="{{asset('prodotti')}}">Prodotti</a></li>
+        <li><a href="{{asset('news')}}">News</a></li>
       </ul>
     </div>
   </header>
   <body>
-    <h1>La Molisana</h1>
     <div class="container">
     @if (!empty($lunga))
+    <h2>LE LUNGHE</h2>
     <ul>
       @foreach ($lunga as $type)
       <li class="box-product">
-        <img class="" src="{{$type["src"]}}" alt="" />
+        <img class="" src="{{$type['src']}}" alt="" />
+        <h2 class="">{{$type["titolo"]}}</h2>
+      </li>
+      @endforeach
+    </ul>
+    @endif
+
+    @if (!empty($lunga))
+    <h2>LE CORTE</h2>
+    <ul>
+      @foreach ($corta as $type)
+      <li class="box-product">
+        <img class="" src="{{$type['src']}}" alt="" />
+        <h2 class="">{{$type["titolo"]}}</h2>
+      </li>
+      @endforeach
+    </ul>
+    @endif
+
+    @if (!empty($lunga))
+    <h2>LE CORTISSIME</h2>
+    <ul>
+      @foreach ($cortissima as $type)
+      <li class="box-product">
+        <img class="" src="{{$type['src']}}" alt="" />
         <h2 class="">{{$type["titolo"]}}</h2>
       </li>
       @endforeach
