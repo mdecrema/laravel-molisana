@@ -1,3 +1,5 @@
+@extends('layouts.mainLayout')
+
 @php
 
 $data = '[
@@ -141,26 +143,15 @@ $data = '[
 
 @endphp
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>La Molisana</title>
-    <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  </head>
-  <header>
-    <div class="logo"><img id="logo-img" src="{{asset('images/logo.png')}}" alt="" /></div>
-    <div class="menu">
-      <ul>
-        <li><a href="{{asset('')}}">Home</a></li>
-        <li><a href="{{asset('prodotti')}}">Prodotti</a></li>
-        <li><a href="{{asset('news')}}">News</a></li>
-      </ul>
-    </div>
-  </header>
-  <body>
-    <div class="container">
+
+@section('title')
+La Molisana - Official page
+@endsection
+
+
+@section('main_content')
+
+<div class="container">
     @if (!empty($lunga))
     <h2>LE LUNGHE</h2>
     <ul>
@@ -196,61 +187,6 @@ $data = '[
       @endforeach
     </ul>
     @endif
-    </div>
-    <footer>
-        <div class="footer_container">
-            <div class="left">
-                <img id="logo-img" src="{{asset('images/logo.png')}}" alt="logo" />
-                <ul>
-                    <li>Ragione Sociale: La Molisana S.P.A.</li>
-                    <li>Sede legale: Contrada Colle Delle Api, 100/A</li>
-                    <li>86100 - Campobasso(CB)</li>
-                    <li>Pec: lamolisana@pec.it</li>
-                    <li>Tel: +39 0874 4981</li>
-                    <li>Fax: +39 0874 629584</li>
-                    <li>info@lamolisana.it (per segnalazioni degli utenti)</li>
-                    <li>commerciale@lamolisana.it</li>
-                    <li>export@lamolisana.it</li>
-                    <li>telefono 380-1292455</li>
-                </ul>
-            </div>
-            <div class="central">
-                <h3>PASTIFICIO</h3>
-                <ul>
-                    <li>Il Pastificio</li>
-                    <li>Grano decorticato a pietra</li>
-                    <li>Il Molise c'è</li>
-                    <li>Filiera Integrata</li>
-                    <li>100 anni di pasta</li>
-                    <li>Sartoria della pasta</li>
-                    <li>Spaghetto Quadrato</li>
-                    <li>Le Persone</li>
-                </ul>
-                <h3>PRODOTTI</h3>
-                <ul>
-                    <li>Il Pastificio</li>
-                    <li>Grano decorticato a pietra</li>
-                    <li>Il Molise c'è</li>
-                    <li>Filiera Integrata</li>
-                    <li>100 anni di pasta</li>
-                    <li>Sartoria della pasta</li>
-                    <li>Spaghetto Quadrato</li>
-                    <li>Le Persone</li>
-                </ul>
-            </div>
-            <div class="right">
-            <h3>COLLEZIONE DA CHEF</h3>
-                <ul>
-                    <li>Il Pastificio</li>
-                    <li>Grano decorticato a pietra</li>
-                    <li>Il Molise c'è</li>
-                    <li>Filiera Integrata</li>
-                </ul>
-            </div>
-            <div class="mountains">
-                <img id="mountains-img" src="{{asset('images/footer-montagne.jpg')}}" alt="mountains_painter" />
-            </div>
-        </div>
-    </footer>
-  </body>
-</html>
+</div>
+
+@endsection
