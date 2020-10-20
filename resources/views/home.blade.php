@@ -21,7 +21,7 @@
 @endphp
 
 @section('title')
-La Molisana - Official page
+La Molisana - Official Page
 @endsection
 
 
@@ -29,7 +29,7 @@ La Molisana - Official page
 
 <div class="container">
     @if (!empty($lunga))
-    <h2>LE LUNGHE</h2>
+    <h2 class="mini-title">LE LUNGHE</h2>
    
       @foreach ($lunga as $key => $type)
       <div class="box-product">
@@ -49,7 +49,7 @@ La Molisana - Official page
 
 
     @if (!empty($corta))
-    <h2>LE CORTE</h2>
+    <h2 class="mini-title">LE CORTE</h2>
     
       @foreach ($corta as $key => $type)
       <div class="box-product">
@@ -68,7 +68,7 @@ La Molisana - Official page
     @endif
 
     @if (!empty($cortissima))
-    <h2>LE CORTISSIME</h2>
+    <h2 class="mini-title">LE CORTISSIME</h2>
     
       @foreach ($cortissima as $key => $type)
       <div class="box-product">
