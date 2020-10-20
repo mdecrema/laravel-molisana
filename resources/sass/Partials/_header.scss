@@ -22,14 +22,18 @@
     background-color: #fff;
 
     ul {
-        width: 25vw;
+        width: 30vw;
         margin: auto;
 
         li {
         display: inline-block;
         list-style: none;
-        padding: 0 5%;
+        padding: 2% 7%;
         text-align: center;
+
+        &:hover {
+                background-color: lightblue;
+            }
 
             a {
                 text-decoration: none;
