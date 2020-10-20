@@ -1,0 +1,18 @@
+.nav-bar {
+    width: 100vw;
+    height: 200px;
+    background-color: #fff;
+}
+
+.logo {
+  width: 100vw;
+  height: 150px;
+  background-color: #fff;
+  text-align: center;
+
+    & img {
+        width: 200px;
+        height: 100px;
+    }
+
+}
