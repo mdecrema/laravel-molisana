@@ -15,14 +15,37 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 
 Route::get('/prodotti', function () {
-    return view('prodotti');
-});
+
+    $data = config('pastaDB');
+
+    $lunga = [];
+    $corta = [];
+    $cortissima = [];
+
+    foreach ($data as $key => $product) {
+        if ($product["tipo"] == "lunga") {
+            $lunga[$key] = $product;
+        } elseif ($product["tipo"] == "corta") {
+            $corta[$key] = $product;
+        } elseif ($product["tipo"] == "cortissima") {
+            $cortissima[$key] = $product;
+        }
+    }
+
+    return view('prodotti', $lunga, $corta, $cortissima);
+})->name('prodotti');
+
+Route::get('/prodotto/show/{id}', function ($id) {
+    
+    $prodotto = config('pasta.$id');
+    return view('prodotto', ['data' => $prodotto]);
+})->name('details');
 
 
 Route::get('/news', function () {
     return view('news');
-});
+})->name('news');
