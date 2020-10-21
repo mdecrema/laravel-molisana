@@ -6,8 +6,14 @@
 
 @section('main_content')
     <div class="box-details">
-        <h3 class="details-title">{{$data['titolo']}}</h3>
-        <p class="details-p">{{$data['descrizione']}}</p> 
+        <div class="details-title">
+            <h3>{{$data['titolo']}}</h3>
+        </div>
+            <img class="d-img" src="{{$data['src-h']}}" alt="" />
+            <img class="d-img" src="{{$data['src-p']}}" alt="" />
+        <div class="details-p">
+            <p>{!!$data['descrizione']!!}</p> 
+        </div>
     </div>
 @endsection
 

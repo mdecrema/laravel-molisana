@@ -41,7 +41,7 @@ Route::get('/prodotti', function () {
 
 Route::get('/prodotto/show/{id}', function ($id) {
     
-    $prodotto = config('pasta.$id');
+    $prodotto = config("pastaDB.$id");
     return view('prodotto', ['data' => $prodotto]);
 })->name('details');
 
